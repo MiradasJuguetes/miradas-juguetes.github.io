@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miradas Juguetes - Juguetes Naturales para Psicomotricidad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(180deg, #f9f7f0 0%, #ffffff 100%);
+      color: #333;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #5d5daa;
+      --secondary: #b37cd2;
+      --accent: #f5c144;
+      --light: #faf9f5;
+      --dark-text: #2c2c2c;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .logo-container {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      filter: drop-shadow(0 3px 6px rgba(93, 93, 170, 0.15));
+      border-radius: 6px;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .header-info {
+      flex: 0 0 220px;
+      background: rgba(255,255,255,0.9);
+      padding: 0.8rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .info-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .info-item {
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .info-item strong {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .btn-container {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-products {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #12b755;
+      transform: scale(1.05);
+    }
+
+    .btn-products:hover {
+      background: var(--secondary);
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 1.2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: var(--accent);
+      margin: 0.6rem auto;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(245, 193, 68, 0.4);
+    }
+
+    .about-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .about-text h2 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .about-text p {
+      margin-bottom: 0.7rem;
+      font-size: 0.85rem;
+      color: var(--dark-text);
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .animated-image {
+      width: 100%;
+      max-width: 60%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      filter: brightness(0.95) contrast(1.05);
+      animation: floatIn 0.8s ease-out forwards;
+    }
+
+    .animated-image:hover {
+      transform: scale(1.03) rotate(-1deg);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      filter: brightness(1) contrast(1.1);
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      text-align: center;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      min-height: 540px;
+    }
+
+    .producto h3 {
+      color: var(--primary);
+      margin: 0.6rem 0 0.4rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .producto p,
+    .producto ul {
+      font-size: 0.85rem;
+      margin-bottom: 0.6rem;
+      color: #555;
+    }
+
+    .producto ul {
+      padding-left: 1.2rem;
+      text-align: left;
+    }
+
+    .product-footer {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .precios {
+      text-align: center;
+    }
+
+    .precio-regular {
+      font-size: 1rem;
+      color: #777;
+      text-decoration: line-through;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .precio-combo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .precio {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .etiqueta-combo {
+      background: var(--accent);
+      color: #2c2c2c;
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 0.4rem;
+      box-shadow: 0 2px 4px rgba(245, 193, 68, 0.3);
+    }
+
+    .btn-comprar {
+      background: var(--accent);
+      color: #2c2c2c;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(245, 193, 68, 0.3);
+      width: 100%;
+    }
+
+    .btn-comprar:hover {
+      background: #ffd466;
+      transform: scale(1.05);
+    }
+
+    .product-gallery {
+      width: 100%;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .main-image:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .thumbnails {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .thumbnails img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .thumbnails img:hover,
+    .thumbnails img.active {
+      border-color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .lightbox-nav {
+      margin-top: 1rem;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .lightbox-arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+      box-sizing: border-box;
+    }
+
+    .lightbox-arrow {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .lightbox-arrow:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.8rem 1rem;
+      margin-top: 2.5rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.4rem;
+      margin: 0 0.6rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 1rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 0.8rem;
+      }
+      .logo {
+        max-width: 350px;
+      }
+      .header-info {
+        width: 100%;
+        max-width: 300px;
+      }
+      .about-section {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .animated-image {
+        max-width: 90%;
+      }
+      .btn-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn {
+        width: 100%;
+        max-width: 250px;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .main-image {
+        height: 140px;
+      }
+      .producto {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABECERA ORIGINAL -->
+  <header>
+    <div class="logo-container">
+      <img src="Logo ultimo.png" alt="Miradas Juguetes" class="logo">
+    </div>
+    <div class="header-info">
+      <div class="info-title">¿Te interesa comprar?</div>
+      <div class="info-item"><strong>📞 +54 9 11 1234-5678</strong><br>WhatsApp</div>
+      <div class="info-item"><strong>✉️ contacto@miradasjuguetes.com</strong><br>Email</div>
+      <div class="info-item"><strong>📦 Envíos en 24/48 hs</strong><br>A todo el país</div>
+    </div>
+    <div class="btn-container">
+      <a href="https://wa.me/5491112345678" target="_blank" class="btn btn-whatsapp">Escribinos</a>
+      <a href="#productos" class="btn btn-products">Ver productos</a>
+    </div>
+  </header>
+
+  <!-- ¿QUÉ ES MIRADAS JUGUETES? -->
+  <section class="section" id="nosotros">
+    <div class="about-section">
+      <div class="about-text">
+        <h2>¿Qué es Miradas Juguetes?</h2>
+        <p>Inspirados en la psicomotricidad vivenciada de Bernard Aucouturier, creemos que “el movimiento es pensamiento”.</p>
+        <p>Cada pieza invita al niño a ser autor de su propio desarrollo, explorando materiales naturales sin imposición ni instrucción.</p>
+        <p>Jugar es aprender… y lo natural siempre conecta mejor con la esencia del niño.</p>
+      </div>
+      <div class="about-image">
+        <img src="foto 1 mueble con juguetes.jpg" alt="Mueble con juguetes naturales" class="animated-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS COMPLETOS (18) -->
+  <section class="section" id="productos">
+    <h2 class="section-title">Nuestros Juguetes Naturales</h2>
+    <div class="products-grid">
+      <!-- 1 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-1" src="foto 39 set 1 5 piezas con cesta.jpg" alt="Set 1 – 5 Piezas con Cesta" class="main-image" onclick="openLightbox(0, 0)">
+          <div class="thumbnails">
+            <img src="foto 39 set 1 5 piezas con cesta.jpg" alt="Foto 1" onclick="openLightbox(0, 0)">
+            <img src="foto 40 set 1 5 piezas con cesta.jpg" alt="Foto 2" onclick="openLightbox(0, 1)">
+          </div>
+        </div>
+        <h3>Set 1 – 5 Piezas con Cesta</h3>
+        <p>Invita al juego sensorial libre, en libertad, respetando su tiempo y su deseo de acción.</p>
+        <ul>
+          <li>Pelota de trapo y trapito orgánico</li>
+          <li>Sonaja de madera y sonajero tejido</li>
+          <li>Mordillo con Orejas para llevar a la boca</li>
+        </ul>
+        <p>En el juego libre, el niño explora texturas, sonidos y formas a su ritmo.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> 5 piezas + cesta natural</p>
+          <span class="etiqueta-combo">OFERTA COMBO</span>
+          <div class="precios">
+            <span class="precio-regular">$62.798</span>
+            <span class="precio-combo">$56.499</span>
+          </div>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-2" src="foto 41 set 2 4 piezas con cesta.jpg" alt="Set 2 – 4 Piezas con Cesta" class="main-image" onclick="openLightbox(1, 0)">
+          <div class="thumbnails">
+            <img src="foto 41 set 2 4 piezas con cesta.jpg" alt="Foto 1" onclick="openLightbox(1, 0)">
+            <img src="foto 42 set 2 4 piezas con cesta.jpg" alt="Foto 2" onclick="openLightbox(1, 1)">
+            <img src="foto 43 set 2 4 piezas con cesta.jpg" alt="Foto 3" onclick="openLightbox(1, 2)">
+          </div>
+        </div>
+        <h3>Set 2 – 4 Piezas con Cesta</h3>
+        <p>Un universo sensorial para los primeros meses.</p>
+        <ul>
+          <li>Trapito orgánico y sonaja de madera</li>
+          <li>Mordillo con Orejas</li>
+          <li>Sonajero con argolla (sin tejido)</li>
+        </ul>
+        <p>El niño descubre el sonido y el tacto en su propio tiempo.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> 4 piezas + cesta natural</p>
+          <span class="etiqueta-combo">OFERTA COMBO</span>
+          <div class="precios">
+            <span class="precio-regular">$41.999</span>
+            <span class="precio-combo">$37.999</span>
+          </div>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-3" src="foto 2 set 3 pelotas con cesta.jpg" alt="Set 3 – 3 Pelotas con Cesta" class="main-image" onclick="openLightbox(2, 0)">
+          <div class="thumbnails">
+            <img src="foto 2 set 3 pelotas con cesta.jpg" alt="Foto 1" onclick="openLightbox(2, 0)">
+            <img src="foto 3 set 3 pelotas con cesta.jpg" alt="Foto 2" onclick="openLightbox(2, 1)">
+            <img src="foto 16 pelota trapo rosa.jpg" alt="Foto 3" onclick="openLightbox(2, 2)">
+            <img src="foto 17 pelota de trapo.jpg" alt="Foto 4" onclick="openLightbox(2, 3)">
+            <img src="foto 18 pelota de volley.jpg" alt="Foto 5" onclick="openLightbox(2, 4)">
+            <img src="foto 19 pelota trapo azul.jpg" alt="Foto 6" onclick="openLightbox(2, 5)">
+            <img src="foto 20 pelotas de trapo cesta.jpg" alt="Foto 7" onclick="openLightbox(2, 6)">
+            <img src="foto 21 pelota volley celeste.jpg" alt="Foto 8" onclick="openLightbox(2, 7)">
+          </div>
+        </div>
+        <h3>Set 3 – 3 Pelotas con Cesta</h3>
+        <p>Invita al lanzamiento, recepción y desplazamiento.</p>
+        <ul>
+          <li>3 pelotas suaves de lana merino</li>
+          <li>Cesta tejida</li>
+        </ul>
+        <p>En el juego de perseguirlas, el niño vive su cuerpo en acción.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> 3 pelotas + cesta natural</p>
+          <span class="etiqueta-combo">OFERTA COMBO</span>
+          <div class="precios">
+            <span class="precio-regular">$67.400</span>
+            <span class="precio-combo">$59.999</span>
+          </div>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 4: Set 4 – NUEVO -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-4" src="foto 51 set 4.jpg" alt="Set 4 – 3 Piezas con Cesta Natural" class="main-image" onclick="openLightbox(3, 0)">
+          <div class="thumbnails">
+            <img src="foto 51 set 4.jpg" alt="Foto 1" onclick="openLightbox(3, 0)">
+            <img src="foto 52 set 4.jpg" alt="Foto 2" onclick="openLightbox(3, 1)">
+            <img src="foto 53 set 4.jpg" alt="Foto 3" onclick="openLightbox(3, 2)">
+          </div>
+        </div>
+        <h3>Set 4 – 3 Piezas con Cesta Natural</h3>
+        <p>Un conjunto pensado para el placer de agarrar, llevar a la boca y dejar caer.</p>
+        <ul>
+          <li>Mordillo con Orejas de tela</li>
+          <li>Sonaja de madera suave</li>
+          <li>Argolla tejida de algodón</li>
+        </ul>
+        <p>Cada pieza acompaña el desarrollo sensorial y la autonomía en los primeros meses.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> 3 piezas + cesta natural</p>
+          <span class="etiqueta-combo">OFERTA COMBO</span>
+          <div class="precios">
+            <span class="precio-regular">$55.560</span>
+            <span class="precio-combo">$49.999</span>
+          </div>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 5: Pelota de Tela – NUEVO -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-5" src="foto 54 pelota de tela.jpg" alt="Pelota de Tela" class="main-image" onclick="openLightbox(4, 0)">
+          <div class="thumbnails">
+            <img src="foto 54 pelota de tela.jpg" alt="Foto 1" onclick="openLightbox(4, 0)">
+            <img src="foto 55 pelota de tela.jpg" alt="Foto 2" onclick="openLightbox(4, 1)">
+            <img src="foto 56 pelota de tela.jpg" alt="Foto 3" onclick="openLightbox(4, 2)">
+            <img src="foto 57 pelota de tela.jpg" alt="Foto 4" onclick="openLightbox(4, 3)">
+          </div>
+        </div>
+        <h3>Pelota de Tela</h3>
+        <p>Suave, segura y perfecta para las primeras manos.</p>
+        <ul>
+          <li>Algodón orgánico y relleno natural</li>
+          <li>Costuras reforzadas y sin piezas sueltas</li>
+          <li>Ideal para morder, abrazar y lanzar suavemente</li>
+        </ul>
+        <p>Se convierte en objeto de apego y compañero de juego en la exploración libre.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Pelota de tela</p>
+          <span class="precio">$15.799</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-6" src="foto 5 bolos con cesta.jpg" alt="Bolos de Madera con Cesta" class="main-image" onclick="openLightbox(5, 0)">
+          <div class="thumbnails">
+            <img src="foto 5 bolos con cesta.jpg" alt="Foto 1" onclick="openLightbox(5, 0)">
+            <img src="foto 12 bolos.jpg" alt="Foto 2" onclick="openLightbox(5, 1)">
+            <img src="foto 13 bolos.jpg" alt="Foto 3" onclick="openLightbox(5, 2)">
+          </div>
+        </div>
+        <h3>Bolos de Madera con cesta natural </h3>
+        <p>Ideales para apilar, derribar y volver a construir.</p>
+        <ul>
+          <li>6 bolos de madera natural</li>
+          <li>cesta de tela natural</li>
+        </ul>
+        <p>En el hacer y deshacer, el niño vive el equilibrio y la gravedad.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> 6 bolos + cesta natural</p>
+          <span class="precio">$29.499</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-7" src="foto 9 arco iris 7 piezas.jpg" alt="Arcoíris de 7 Piezas" class="main-image" onclick="openLightbox(6, 0)">
+          <div class="thumbnails">
+            <img src="foto 9 arco iris 7 piezas.jpg" alt="Foto 1" onclick="openLightbox(6, 0)">
+            <img src="foto 46 arco iris 7 piezas.jpg" alt="Foto 2" onclick="openLightbox(6, 1)">
+            <img src="foto 47 arco iris 7 piezas.jpg" alt="Foto 3" onclick="openLightbox(6, 2)">
+            <img src="foto 48 arco iris 7 piezas.jpg" alt="Foto 4" onclick="openLightbox(6, 3)">
+          </div>
+        </div>
+        <h3>Arcoíris de 7 Piezas</h3>
+        <p>Diseñado para apilar, equilibrar y crear sin límites.</p>
+        <ul>
+          <li>7 piezas curvas de madera natural</li>
+          <li>Sin barnices ni químicos</li>
+        </ul>
+        <p>En su juego libre, el niño construye y transforma.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Arcoíris de 7 piezas</p>
+          <span class="precio">$13.499</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-8" src="foto 8 cilindro con pelotita.jpg" alt="Cilindro con Pelota de Madera" class="main-image" onclick="openLightbox(7, 0)">
+          <div class="thumbnails">
+            <img src="foto 8 cilindro con pelotita.jpg" alt="Foto 1" onclick="openLightbox(7, 0)">
+            <img src="foto 14 cilindro con pelotita.jpg" alt="Foto 2" onclick="openLightbox(7, 1)">
+            <img src="foto 15 cilindro con pelotita.jpg" alt="Foto 3" onclick="openLightbox(7, 2)">
+          </div>
+        </div>
+        <h3>Rodari con Pelota de Madera</h3>
+        <p>Un clásico de la psicomotricidad.</p>
+        <ul>
+          <li>Rodari de madera sin tratar</li>
+          <li>Pelota interior de madera natural</li>
+        </ul>
+        <p>El niño explora el espacio interno y externo.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Rodari con pelota de madera</p>
+          <span class="precio">$11.499</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-9" src="foto 32 sonajero con tejido.jpg" alt="Sonajero con Tejido" class="main-image" onclick="openLightbox(8, 0)">
+          <div class="thumbnails">
+            <img src="foto 32 sonajero con tejido.jpg" alt="Foto 1" onclick="openLightbox(8, 0)">
+            <img src="foto 35 sonajero con tejido.jpg" alt="Foto 2" onclick="openLightbox(8, 1)">
+            <img src="foto 36 sonajero con tejido.jpg" alt="Foto 3" onclick="openLightbox(8, 2)">
+            <img src="foto 37 sonajero con tejido.jpg" alt="Foto 4" onclick="openLightbox(8, 3)">
+          </div>
+        </div>
+        <h3>Sonajero con Tejido</h3>
+        <p>Combina sonido suave y textura cálida.</p>
+        <ul>
+          <li>Corazón de madera natural</li>
+          <li>Tejido a mano con fibras naturales</li>
+        </ul>
+        <p>Invita al agarre y al descubrimiento táctil.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Sonajero con tejido</p>
+          <span class="precio">$7.799</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-10" src="foto 22 jirafa sonajero.jpg" alt="Jirafa Sonajero" class="main-image" onclick="openLightbox(9, 0)">
+          <div class="thumbnails">
+            <img src="foto 22 jirafa sonajero.jpg" alt="Foto 1" onclick="openLightbox(9, 0)">
+            <img src="foto 23 jirafa sonajero.jpg" alt="Foto 2" onclick="openLightbox(9, 1)">
+            <img src="foto 24 jirafa sonajero.jpg" alt="Foto 3" onclick="openLightbox(9, 2)">
+          </div>
+        </div>
+        <h3>Jirafa Sonajero</h3>
+        <p>Jirafa de tela con sonido suave.</p>
+        <ul>
+          <li>Forma ergonómica</li>
+        </ul>
+        <p>Invita al juego simbólico.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Jirafa sonajero</p>
+          <span class="precio">$9.499</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-11" src="foto 33 sonajero con argolla sin tejido.jpg" alt="Sonajero de Madera con Argolla" class="main-image" onclick="openLightbox(10, 0)">
+          <div class="thumbnails">
+            <img src="foto 33 sonajero con argolla sin tejido.jpg" alt="Foto 1" onclick="openLightbox(10, 0)">
+          </div>
+        </div>
+        <h3>Sonajero de Madera con Argolla</h3>
+        <p>Sonajero minimalista de madera.</p>
+        <ul>
+          <li>Madera natural sin químicos</li>
+          <li>Argolla de madera sin barniz</li>
+        </ul>
+        <p>Acompaña la exploración sin distracciones.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Sonajero con argolla</p>
+          <span class="precio">$6.899</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-12" src="foto 34 sonajero simple con argolla.jpg" alt="Sonajero Simple de Madera" class="main-image" onclick="openLightbox(11, 0)">
+          <div class="thumbnails">
+            <img src="foto 34 sonajero simple con argolla.jpg" alt="Foto 1" onclick="openLightbox(11, 0)">
+          </div>
+        </div>
+        <h3>Sonajero Simple de Madera</h3>
+        <p>Objeto sensorial puro: madera y sonido.</p>
+        <ul>
+          <li>Forma redondeada segura</li>
+          <li>Sonido suave y constante</li>
+        </ul>
+        <p>El niño se encuentra con lo esencial.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Sonajero simple</p>
+          <span class="precio">$6.899</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 13: Mordillo con Orejas -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-13" src="foto 29 argolla conejo de tela.jpg" alt="Mordillo con Orejas" class="main-image" onclick="openLightbox(12, 0)">
+          <div class="thumbnails">
+            <img src="foto 29 argolla conejo de tela.jpg" alt="Foto 1" onclick="openLightbox(12, 0)">
+            <img src="foto 30 argolla conejo de tela.jpg" alt="Foto 2" onclick="openLightbox(12, 1)">
+          </div>
+        </div>
+        <h3>Mordillo con Orejas</h3>
+        <p>Argolla de madera con orejitas, diseñada para llevar a la boca y manipular con seguridad.</p>
+        <ul>
+          <li>Madera natural</li>
+          <li>Orejitas estimulantes al tacto</li>
+        </ul>
+        <p>Se convierte en compañero de juego y consuelo.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Mordillo con Orejas</p>
+          <span class="precio">$7.199</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-14" src="foto 31 sonaja madera.jpg" alt="Sonaja de Madera" class="main-image" onclick="openLightbox(13, 0)">
+          <div class="thumbnails">
+            <img src="foto 31 sonaja madera.jpg" alt="Foto 1" onclick="openLightbox(13, 0)">
+          </div>
+        </div>
+        <h3>Sonaja de Madera</h3>
+        <p>Sonaja clásica tallada en madera.</p>
+        <ul>
+          <li>Madera sin tratar</li>
+          <li>Forma fácil de sostener</li>
+        </ul>
+        <p>El sonido acompaña su movimiento sin dirigirlo.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Sonaja de madera</p>
+          <span class="precio">$6.499</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-15" src="foto 44 yoyo.jpg" alt="Yoyo de Madera" class="main-image" onclick="openLightbox(14, 0)">
+          <div class="thumbnails">
+            <img src="foto 44 yoyo.jpg" alt="Foto 1" onclick="openLightbox(14, 0)">
+            <img src="foto 45 yoyo.jpg" alt="Foto 2" onclick="openLightbox(14, 1)">
+          </div>
+        </div>
+        <h3>Yoyo de Madera</h3>
+        <p>Juguete de acción-reacción que invita al desplazamiento.</p>
+        <ul>
+          <li>Madera natural y cuerda resistente</li>
+          <li>Movimiento impredecible</li>
+        </ul>
+        <p>Favorece la marcha autónoma y la persecución visual.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Yoyo de madera</p>
+          <span class="precio">$5.799</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-16" src="foto 10 auto f1 y camioneta.jpg" alt="Auto o Camioneta de Madera" class="main-image" onclick="openLightbox(15, 0)">
+          <div class="thumbnails">
+            <img src="foto 10 auto f1 y camioneta.jpg" alt="Foto 1" onclick="openLightbox(15, 0)">
+            <img src="foto 11 auto f1 y camioneta.jpg" alt="Foto 2" onclick="openLightbox(15, 1)">
+          </div>
+        </div>
+        <h3>Auto o Camioneta de Madera</h3>
+        <p>Vehículo de arrastre con diseño realista.</p>
+        <ul>
+          <li>Madera sin barniz</li>
+          <li>Ruedas fijas para arrastrar</li>
+        </ul>
+        <p>Estimula la marcha y la narrativa personal.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Auto o camioneta de madera</p>
+          <span class="precio">$12.240</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 17 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-17" src="foto 25 trapitos.jpg" alt="Trapitos de Tela" class="main-image" onclick="openLightbox(16, 0)">
+          <div class="thumbnails">
+            <img src="foto 25 trapitos.jpg" alt="Foto 1" onclick="openLightbox(16, 0)">
+            <img src="foto 26 trapitos.jpg" alt="Foto 2" onclick="openLightbox(16, 1)">
+            <img src="foto 27 trapitos.jpg" alt="Foto 3" onclick="openLightbox(16, 2)">
+            <img src="foto 28 trapitos.jpg" alt="Foto 4" onclick="openLightbox(16, 3)">
+          </div>
+        </div>
+        <h3>Trapitos de Tela</h3>
+        <p>trapito suave en distintos colores.</p>
+        <ul>
+          <li>Algodón orgánico y telas naturales</li>
+          <li>Bordes cosidos con seguridad</li>
+        </ul>
+        <p>Objetos de apego que favorecen la calma y el vínculo.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> 4 trapitos de tela</p>
+          <span class="precio">$9.499</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+
+      <!-- 18 -->
+      <div class="producto">
+        <div class="product-gallery">
+          <img id="main-img-18" src="foto 6 pato con ruedas.jpg" alt="Pato de Madera con Ruedas" class="main-image" onclick="openLightbox(17, 0)">
+          <div class="thumbnails">
+            <img src="foto 6 pato con ruedas.jpg" alt="Foto 1" onclick="openLightbox(17, 0)">
+            <img src="foto 49 pato con ruedas.jpg" alt="Foto 2" onclick="openLightbox(17, 1)">
+            <img src="foto 50 pato con ruedas.jpg" alt="Foto 3" onclick="openLightbox(17, 2)">
+          </div>
+        </div>
+        <h3>Pato de Madera con Ruedas</h3>
+        <p>Compañero de arrastre que invita al desplazamiento.</p>
+        <ul>
+          <li>Pato tallado en madera natural</li>
+          <li>Ruedas de madera sin barniz</li>
+        </ul>
+        <p>Estimula la marcha autónoma y la coordinación.</p>
+        <div class="product-footer">
+          <p><strong>Incluye:</strong> Pato de madera con ruedas</p>
+          <span class="precio">$13.499</span>
+          <button class="btn-comprar">Consultar disponibilidad</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-arrows">
+      <div class="lightbox-arrow" onclick="prevImage(event)">‹</div>
+      <div class="lightbox-arrow" onclick="nextImage(event)">›</div>
+    </div>
+    <img id="lightbox-img" src="" alt="Ampliar imagen">
+    <div class="lightbox-nav" id="lightbox-counter"></div>
+  </div>
+
+  <footer>
+    <p><strong>Miradas Juguetes</strong></p>
+    <p>Juguetes naturales para salas de psicomotricidad y hogares conscientes</p>
+    <div class="social-icons">
+      <a href="https://wa.me/5491112345678" target="_blank">💬</a>
+      <a href="mailto:contacto@miradasjuguetes.com" target="_blank">✉️</a>
+    </div>
+    <p class="copyright">&copy; 2025 Miradas Juguetes. Todos los derechos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/5491112345678" target="_blank" class="whatsapp-float">💬</a>
+
+  <script>
+    const productos = [
+      ["foto 39 set 1 5 piezas con cesta.jpg", "foto 40 set 1 5 piezas con cesta.jpg"],
+      ["foto 41 set 2 4 piezas con cesta.jpg", "foto 42 set 2 4 piezas con cesta.jpg", "foto 43 set 2 4 piezas con cesta.jpg"],
+      ["foto 2 set 3 pelotas con cesta.jpg", "foto 3 set 3 pelotas con cesta.jpg", "foto 16 pelota trapo rosa.jpg", "foto 17 pelota de trapo.jpg", "foto 18 pelota de volley.jpg", "foto 19 pelota trapo azul.jpg", "foto 20 pelotas de trapo cesta.jpg", "foto 21 pelota volley celeste.jpg"],
+      ["foto 51 set 4.jpg", "foto 52 set 4.jpg", "foto 53 set 4.jpg"],
+      ["foto 54 pelota de tela.jpg", "foto 55 pelota de tela.jpg", "foto 56 pelota de tela.jpg", "foto 57 pelota de tela.jpg"],
+      ["foto 5 bolos con cesta.jpg", "foto 12 bolos.jpg", "foto 13 bolos.jpg"],
+      ["foto 9 arco iris 7 piezas.jpg", "foto 46 arco iris 7 piezas.jpg", "foto 47 arco iris 7 piezas.jpg", "foto 48 arco iris 7 piezas.jpg"],
+      ["foto 8 cilindro con pelotita.jpg", "foto 14 cilindro con pelotita.jpg", "foto 15 cilindro con pelotita.jpg"],
+      ["foto 32 sonajero con tejido.jpg", "foto 35 sonajero con tejido.jpg", "foto 36 sonajero con tejido.jpg", "foto 37 sonajero con tejido.jpg"],
+      ["foto 22 jirafa sonajero.jpg", "foto 23 jirafa sonajero.jpg", "foto 24 jirafa sonajero.jpg"],
+      ["foto 33 sonajero con argolla sin tejido.jpg"],
+      ["foto 34 sonajero simple con argolla.jpg"],
+      ["foto 29 argolla conejo de tela.jpg", "foto 30 argolla conejo de tela.jpg"],
+      ["foto 31 sonaja madera.jpg"],
+      ["foto 44 yoyo.jpg", "foto 45 yoyo.jpg"],
+      ["foto 10 auto f1 y camioneta.jpg", "foto 11 auto f1 y camioneta.jpg"],
+      ["foto 25 trapitos.jpg", "foto 26 trapitos.jpg", "foto 27 trapitos.jpg", "foto 28 trapitos.jpg"],
+      ["foto 6 pato con ruedas.jpg", "foto 49 pato con ruedas.jpg", "foto 50 pato con ruedas.jpg"]
+    ];
+
+    let currentProduct = 0;
+    let currentImage = 0;
+
+    function openLightbox(productIndex, imageIndex) {
+      currentProduct = productIndex;
+      currentImage = imageIndex;
+      updateLightbox();
+      document.getElementById('lightbox').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateLightbox() {
+      const img = document.getElementById('lightbox-img');
+      const counter = document.getElementById('lightbox-counter');
+      img.src = productos[currentProduct][currentImage];
+      counter.textContent = `${currentImage + 1} de ${productos[currentProduct].length}`;
+    }
+
+    function nextImage(e) {
+      e.stopPropagation();
+      currentImage = (currentImage + 1) % productos[currentProduct].length;
+      updateLightbox();
+    }
+
+    function prevImage(e) {
+      e.stopPropagation();
+      currentImage = (currentImage - 1 + productos[currentProduct].length) % productos[currentProduct].length;
+      updateLightbox();
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage(e);
+      if (e.key === 'ArrowLeft') prevImage(e);
+    });
+
+    document.querySelectorAll('.btn-comprar').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('¡Gracias, Martín! 🌿\nNos pondremos en contacto contigo pronto.');
+      });
+    });
+  </script>
+
+</body>
+</html>
