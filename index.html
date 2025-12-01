@@ -540,7 +540,7 @@
       <div class="info-item"><strong>📦 Envíos en 24/48 hs</strong><br>A todo el país</div>
     </div>
     <div class="btn-container">
-      <a href="https://wa.me/5491112345678" target="_blank" class="btn btn-whatsapp">Escribinos</a>
+      <a href="https://wa.me/5492617099644" target="_blank" class="btn btn-whatsapp">Escribinos</a>
       <a href="#productos" class="btn btn-products">Ver productos</a>
     </div>
   </header>
@@ -560,7 +560,7 @@
     </div>
   </section>
 
-  <!-- PRODUCTOS COMPLETOS (18) -->
+  <!-- PRODUCTOS COMPLETOS -->
   <section class="section" id="productos">
     <h2 class="section-title">Nuestros Juguetes Naturales</h2>
     <div class="products-grid">
@@ -654,7 +654,7 @@
         </div>
       </div>
 
-      <!-- 4: Set 4 – NUEVO -->
+      <!-- 4 -->
       <div class="producto">
         <div class="product-gallery">
           <img id="main-img-4" src="foto 51 set 4.jpg" alt="Set 4 – 3 Piezas con Cesta Natural" class="main-image" onclick="openLightbox(3, 0)">
@@ -683,7 +683,7 @@
         </div>
       </div>
 
-      <!-- 5: Pelota de Tela – NUEVO -->
+      <!-- 5 -->
       <div class="producto">
         <div class="product-gallery">
           <img id="main-img-5" src="foto 54 pelota de tela.jpg" alt="Pelota de Tela" class="main-image" onclick="openLightbox(4, 0)">
@@ -874,7 +874,7 @@
         </div>
       </div>
 
-      <!-- 13: Mordillo con Orejas -->
+      <!-- 13 -->
       <div class="producto">
         <div class="product-gallery">
           <img id="main-img-13" src="foto 29 argolla conejo de tela.jpg" alt="Mordillo con Orejas" class="main-image" onclick="openLightbox(12, 0)">
@@ -1030,14 +1030,13 @@
     <p><strong>Miradas Juguetes</strong></p>
     <p>Juguetes naturales para salas de psicomotricidad y hogares conscientes</p>
     <div class="social-icons">
-      <a href="https://wa.me/5491112345678" target="_blank">💬</a>
+      <a href="https://wa.me/5492617099644" target="_blank">💬</a>
       <a href="mailto:contacto@miradasjuguetes.com" target="_blank">✉️</a>
     </div>
     <p class="copyright">&copy; 2025 Miradas Juguetes. Todos los derechos reservados.</p>
   </footer>
 
-  <a href="https://wa.me/5491112345678" target="_blank" class="whatsapp-float">💬</a>
-
+  <a href="https://wa.me/5492617099644" target="_blank" class="whatsapp-float">💬</a>
   <script>
     const productos = [
       ["foto 39 set 1 5 piezas con cesta.jpg", "foto 40 set 1 5 piezas con cesta.jpg"],
@@ -1101,12 +1100,34 @@
       if (e.key === 'ArrowLeft') prevImage(e);
     });
 
-    document.querySelectorAll('.btn-comprar').forEach(btn => {
+    document.querySelectorAll('.btn-comprar').forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        alert('¡Gracias, Martín! 🌿\nNos pondremos en contacto contigo pronto.');
+        const nombres = [
+          "Set 1 – 5 Piezas con Cesta",
+          "Set 2 – 4 Piezas con Cesta",
+          "Set 3 – 3 Pelotas con Cesta",
+          "Set 4 – 3 Piezas con Cesta Natural",
+          "Pelota de Tela",
+          "Bolos de Madera con Cesta",
+          "Arcoíris de 7 Piezas",
+          "Rodari con Pelota de Madera",
+          "Sonajero con Tejido",
+          "Jirafa Sonajero",
+          "Sonajero de Madera con Argolla",
+          "Sonajero Simple de Madera",
+          "Mordillo con Orejas",
+          "Sonaja de Madera",
+          "Yoyo de Madera",
+          "Auto o Camioneta de Madera",
+          "Trapitos de Tela",
+          "Pato de Madera con Ruedas"
+        ];
+        const nombreProducto = nombres[index] || "un producto";
+        const mensaje = `Hola, quiero consultar disponibilidad del ${nombreProducto}.`;
+        const url = `https://wa.me/5492617099644?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
       });
     });
   </script>
-
 </body>
 </html>
